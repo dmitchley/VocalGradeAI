@@ -1,8 +1,8 @@
 {
-  "name": "screen-recorder",
-  "productName": "screen-recorder",
+  "name": "VocalGrade AI",
+  "productName": "VocalGrade AI",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "My VocalGrade AI",
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",
@@ -13,8 +13,8 @@
   },
   "keywords": [],
   "author": {
-    "name": "Zach Doster",
-    "email": "dosterz97@gmail.com"
+    "name": "Dylan Mitchley",
+    "email": "dylanmitchley1994@gmail.com"
   },
   "license": "MIT",
   "devDependencies": {
