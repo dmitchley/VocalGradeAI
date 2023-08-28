@@ -2,19 +2,80 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Hello World!</title>
+    <title>Vocal Grade AI</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f3f4f6;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        color: #333;
+      }
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        color: #666;
+      }
+      .button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+      }
+      .is-primary {
+        background-color: #3498db;
+        color: white;
+      }
+      .is-primary:hover {
+        background-color: #2980b9;
+      }
+      .is-warning {
+        background-color: #e67e22;
+        color: white;
+      }
+      .is-warning:hover {
+        background-color: #d35400;
+      }
+    </style>
   </head>
   <body>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application!</p>
+    <h1>🎤 Vocal Grade AI</h1>
+    <p>
+      Welcome to Vocal Grade AI, your English pronunciation improvement tool!
+    </p>
     <video style="width: 640px; height: 480px; display: none"></video>
 
-    <button id="startBtn" class="button is-primary">Start</button>
-    <button id="stopBtn" class="button is-warning">Stop</button>
+    <div>
+      <button id="startBtn" class="button is-primary">Start Recording</button>
+      <button id="stopBtn" class="button is-warning" disabled>
+        Stop Recording
+      </button>
+    </div>
 
-    <!-- <button id="videoSelectBtn" class="button is-text">
-      Get Video Sources
-    </button>
-    <select id="selectMenu"></select> -->
+    <script>
+      const startBtn = document.getElementById("startBtn");
+      const stopBtn = document.getElementById("stopBtn");
+
+      startBtn.addEventListener("click", () => {
+        // Code to start recording audio
+        startBtn.disabled = true;
+        stopBtn.disabled = false;
+      });
+
+      stopBtn.addEventListener("click", () => {
+        // Code to stop recording audio and analyze
+        startBtn.disabled = false;
+        stopBtn.disabled = true;
+      });
+    </script>
   </body>
 </html>

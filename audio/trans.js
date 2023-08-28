@@ -4,11 +4,13 @@ const { Configuration, OpenAIApi } = require("openai");
 
 const fetch = require("node-fetch");
 
-const API_TOKEN = "e1feba3ea0cd4255b423b8d60818367b";
-const OPENAI_API_KEY = "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";
+// assembly AI Token
+ 
+// Open AI Token
+ 
 
 const configuration = new Configuration({
-  apiKey: OPENAI_API_KEY,
+  apiKey: process.env.OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
 
@@ -35,7 +37,7 @@ async function getOpenAIFeedback(text) {
   }
 }
 
-async function upload_file(api_token, path) {
+async function upload_file(process.env.process.env.api_token, path) {
   console.log(`Uploading file: ${path}`);
   const data = fs.readFileSync(path);
   const url = "https://api.assemblyai.com/v2/upload";
@@ -45,7 +47,7 @@ async function upload_file(api_token, path) {
     body: data,
     headers: {
       "Content-Type": "application/octet-stream",
-      Authorization: api_token,
+      Authorization: process.env.process.env.api_token,
     },
   });
 
@@ -58,9 +60,9 @@ async function upload_file(api_token, path) {
   }
 }
 
-async function transcribeAudio(api_token, audio_url) {
+async function transcribeAudio(process.env.api_token, audio_url) {
   const headers = {
-    authorization: api_token,
+    authorization: process.env.api_token,
     "content-type": "application/json",
   };
   const response = await fetch("https://api.assemblyai.com/v2/transcript", {
@@ -90,14 +92,14 @@ async function main() {
   console.log("Welcome to AssemblyAI!");
 
   const path = "./new.webm";
-  const uploadUrl = await upload_file(API_TOKEN, path);
+  const uploadUrl = await upload_file(process.env.api_token, path);
 
   if (!uploadUrl) {
     console.error(new Error("Upload failed. Please try again."));
     return;
   }
 
-  const transcript = await transcribeAudio(API_TOKEN, uploadUrl);
+  const transcript = await transcribeAudio(process.env.api_token, uploadUrl);
   console.log("Original Transcript:", transcript.text);
 
   const improvedText = await getOpenAIFeedback(transcript.text);
