@@ -1,8 +1,8 @@
-# Vocal AI: Enhance Your English Speaking with Personalized Feedback
+# Vocal Grade Ai: Enhance Your English Speaking with Personalized Feedback
 
 ## Introduction
 
-Vocal AI is a revolutionary application designed to empower non-native English speakers in improving their spoken English skills. With the integration of advanced speech analysis technology and personalized feedback from experienced English teachers, Vocal AI offers an immersive and convenient way to enhance your English pronunciation and communication.
+Vocal Grade Ai is a revolutionary application designed to empower non-native English speakers in improving their spoken English skills. With the integration of advanced speech analysis technology and personalized feedback from AI, Vocal AI offers an immersive and convenient way to enhance your English pronunciation and communication.
 
 <img src="./misc/Capture.PNG" />
 
