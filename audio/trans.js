@@ -5,7 +5,9 @@ const { Configuration, OpenAIApi } = require("openai");
 const fetch = require("node-fetch");
 
 const API_TOKEN = "e1feba3ea0cd4255b423b8d60818367b";
-const OPENAI_API_KEY = "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";
+//const OPENAI_API_KEY = "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";
+const OPENAI_API_KEY =
+  "sk-proj-YidaY8h7XB280kI0m3j4T3BlbkFJvDqlAOkiKvdhBOXxCDYD";
 
 const configuration = new Configuration({
   apiKey: OPENAI_API_KEY,
